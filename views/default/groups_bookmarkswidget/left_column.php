@@ -9,10 +9,12 @@
  */
 ?>
 <div id="bookmarks_widget_layout">
-  <h2>Bookmarks</h2>
+  <h2><?php echo elgg_echo("groups_bookmarkswidget:title"); ?></h2>
   
   <?php
   set_context('search');
-  echo list_entities('object','bookmarks',page_owner());
+  echo list_entities('object', 'bookmarks', page_owner());
   ?>
+  
+  <div class="forum_latest"><a href="<?php echo $vars['url'] . 'pg/bookmarks/group:' . page_owner() . '/items' ?>"><?php echo elgg_echo('groups_bookmarkswidget:more') ?></a></div>
 </div>
